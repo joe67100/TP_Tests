@@ -73,7 +73,7 @@ Utilisation abusive de primitives et de nombres magiques.
 
 -   Object-Orientation Abusers
 
-> Utilisation de switch non approprié
+> Utilisation de switchs non appropriée
 
 ```csharp
 switch (Console.ReadKey(true).Key)
@@ -111,11 +111,11 @@ switch (Console.ReadKey(true).Key)
 }
 ```
 
+Switch cases beaucoup trop longs et complexes rendant la lisibilité complexe.
+
 ---
 
 -   "Dispensables"
-
-Switch cases beaucoup trop longs et complexes rendant la lisibilité complexe.
 
 > Code mort
 
