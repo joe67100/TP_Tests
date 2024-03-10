@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\DEV\\_TESTS_2A\\MorpionApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|c:\\dev\\_tests_2a\\morpionapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|c:\\dev\\_tests_2a\\morpionapp\\puissancequatre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|solutionrelative:puissancequatre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|c:\\dev\\_tests_2a\\morpionapp\\morpion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|solutionrelative:morpion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3D7BC80-7B26-4428-B8C1-D4B94280D534}|..\\MorpionAppTest\\MorpionAppTest.csproj|c:\\dev\\_tests_2a\\morpionapptest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PuissanceQuatre.cs",
+              "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\MorpionApp\\PuissanceQuatre.cs",
+              "RelativeDocumentMoniker": "PuissanceQuatre.cs",
+              "ToolTip": "C:\\DEV\\_TESTS_2A\\MorpionApp\\PuissanceQuatre.cs",
+              "RelativeToolTip": "PuissanceQuatre.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoBAABgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T15:43:37.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\MorpionApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\DEV\\_TESTS_2A\\MorpionApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB0AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T15:43:29.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Morpion.cs",
+              "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\MorpionApp\\Morpion.cs",
+              "RelativeDocumentMoniker": "Morpion.cs",
+              "ToolTip": "C:\\DEV\\_TESTS_2A\\MorpionApp\\Morpion.cs",
+              "RelativeToolTip": "Morpion.cs",
+              "ViewState": "AQIAAOMAAAAAAAAAAADwv/YAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T14:59:47.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\MorpionAppTest\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "..\\MorpionAppTest\\UnitTest1.cs",
+              "ToolTip": "C:\\DEV\\_TESTS_2A\\MorpionAppTest\\UnitTest1.cs",
+              "RelativeToolTip": "..\\MorpionAppTest\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T14:53:15.575Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
