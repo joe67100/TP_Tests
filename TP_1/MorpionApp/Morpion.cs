@@ -16,6 +16,11 @@ namespace MorpionApp
         {
             grille = new char[3, 3];
         }
+        
+        public int Multiplication(int number1, int number2)
+        {
+            return number1 * number2;
+        }
 
         public void BoucleJeu()
         {
