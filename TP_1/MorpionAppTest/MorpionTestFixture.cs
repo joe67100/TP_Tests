@@ -33,5 +33,19 @@ namespace MorpionAppTest
                 morpion.grille[ligne, colonne] = joueur;
             }
         }
+
+        protected void SetGrillePleine()
+        {
+            char joueur = 'X';
+            for (int ligne = 0; ligne < 3; ligne++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    morpion.grille[ligne, col] = joueur;
+                    joueur = joueur == 'X' ? 'O' : 'X';
+                }
+            }
+        }
+
     }
 }
