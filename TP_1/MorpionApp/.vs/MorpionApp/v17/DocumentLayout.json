@@ -3,16 +3,10 @@
   "WorkspaceRootPath": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A3D7BC80-7B26-4428-B8C1-D4B94280D534}|..\\MorpionAppTest\\MorpionAppTest.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapptest\\puissancequatretest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3D7BC80-7B26-4428-B8C1-D4B94280D534}|..\\MorpionAppTest\\MorpionAppTest.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapptest\\morpiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\DEV\\_TESTS_2A\\TP_1\\MorpionAppTest\\PuissanceQuatreTest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3D7BC80-7B26-4428-B8C1-D4B94280D534}|..\\MorpionAppTest\\MorpionAppTest.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapptest\\morpiontestfixture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3D7BC80-7B26-4428-B8C1-D4B94280D534}|..\\MorpionAppTest\\MorpionAppTest.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapptest\\puissancequatretestfixture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapp\\morpion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -28,6 +22,12 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\DEV\\_TESTS_2A\\MorpionAppTest\\UnitTest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\DEV\\_TESTS_2A\\TP_1\\MorpionAppTest\\PuissanceQuatreTestFixture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\DEV\\_TESTS_2A\\TP_1\\MorpionAppTest\\MorpionTest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,14 +47,14 @@
               "RelativeDocumentMoniker": "..\\MorpionAppTest\\PuissanceQuatreTest.cs",
               "ToolTip": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionAppTest\\PuissanceQuatreTest.cs",
               "RelativeToolTip": "..\\MorpionAppTest\\PuissanceQuatreTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-11T14:49:02.304Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "PuissanceQuatreTestFixture.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionAppTest\\PuissanceQuatreTestFixture.cs",
               "RelativeDocumentMoniker": "..\\MorpionAppTest\\PuissanceQuatreTestFixture.cs",
@@ -62,12 +62,11 @@
               "RelativeToolTip": "..\\MorpionAppTest\\PuissanceQuatreTestFixture.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T14:46:55.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T14:46:55.657Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "MorpionTest.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionAppTest\\MorpionTest.cs",
               "RelativeDocumentMoniker": "..\\MorpionAppTest\\MorpionTest.cs",
@@ -75,12 +74,11 @@
               "RelativeToolTip": "..\\MorpionAppTest\\MorpionTest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T07:27:54.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T07:27:54.037Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MorpionTestFixture.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionAppTest\\MorpionTestFixture.cs",
               "RelativeDocumentMoniker": "..\\MorpionAppTest\\MorpionTestFixture.cs",
@@ -88,12 +86,11 @@
               "RelativeToolTip": "..\\MorpionAppTest\\MorpionTestFixture.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAkwBQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T07:27:39.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T07:27:39.413Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Morpion.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\Morpion.cs",
               "RelativeDocumentMoniker": "Morpion.cs",
@@ -101,12 +98,11 @@
               "RelativeToolTip": "Morpion.cs",
               "ViewState": "AQIAAOEAAAAAAAAAAAAMwPEAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T14:59:47.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-28T14:59:47.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "PuissanceQuatre.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\PuissanceQuatre.cs",
               "RelativeDocumentMoniker": "PuissanceQuatre.cs",
@@ -114,12 +110,11 @@
               "RelativeToolTip": "PuissanceQuatre.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACoBAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T15:43:37.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-28T15:43:37.582Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -131,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\MorpionAppTest\\UnitTest1.cs",
               "RelativeDocumentMoniker": "..\\..\\MorpionAppTest\\UnitTest1.cs",

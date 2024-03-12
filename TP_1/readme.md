@@ -232,6 +232,23 @@ Beaucoup trop d'indentation rendant le code difficilement lisible.
     -   Exécuter les tests sur le code actuel et identifier les tests qui échouent.
     -   Analyser les causes des échecs et identifier les bugs et les dysfonctionnements dans le code.
 
+> Exemples de tests unitaires (pré-refactoring)
+
+![Tests initiaux](images/tests_initiaux.png)
+
+Ces premiers tests témoignent de la présence de __dysfonctionnements__. Notamment pour la vérification de la victoire horizontale.  
+Ils mettent également en évidence qu'il aurait été très facile de passer à côté de ce défaut car il n'est pas judicieux de tester absolument toutes les combinaisons  
+La raison provient des vérifications (notamment `verifVictoire`) non-conformes  
+
+Cependant ils ne permettent pas de mettre en exergue certains problèmes relatifs à l'IHM, comme les exemples suivants :
+
+![IHM bug1](/images/ihm_bug1.png)
+![IHM bug2](/images/ihm_bug2.png)
+*Parfois le même joueur joue 2 fois d'affilé*
+
+![IHM bug3](/images/ihm_bug3.png)
+*Les pions n'apparaissent pas sur la dernière colonne du puissance 4*
+
 *   **Correction des défauts et refactorisation**
 
     -   Corriger les bugs identifiés en modifiant le code source.
