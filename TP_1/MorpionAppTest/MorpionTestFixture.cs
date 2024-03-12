@@ -1,5 +1,3 @@
-using MorpionApp;
-
 namespace MorpionAppTest
 {
     public class MorpionTestFixture
@@ -15,22 +13,22 @@ namespace MorpionAppTest
         {
             for (int col = 0; col < 3; col++)
             {
-                morpion.grille[ligne, col] = joueur;
+                morpion.grille.PlacerJeton(ligne, col, joueur);
             }
         }
 
         protected void SetDiagonaleVictorieuse(char joueur)
         {
-            morpion.grille[0, 0] = joueur;
-            morpion.grille[1, 1] = joueur;
-            morpion.grille[2, 2] = joueur;
+            morpion.grille.PlacerJeton(0, 0, joueur);
+            morpion.grille.PlacerJeton(1, 1, joueur);
+            morpion.grille.PlacerJeton(2, 2, joueur);
         }
 
         protected void SetColonneVictorieuse(char joueur, int colonne)
         {
             for (int ligne = 0; ligne < 3; ligne++)
             {
-                morpion.grille[ligne, colonne] = joueur;
+                morpion.grille.PlacerJeton(ligne, colonne, joueur);
             }
         }
 
@@ -41,11 +39,10 @@ namespace MorpionAppTest
             {
                 for (int col = 0; col < 3; col++)
                 {
-                    morpion.grille[ligne, col] = joueur;
+                    morpion.grille.PlacerJeton(ligne, col, joueur);
                     joueur = joueur == 'X' ? 'O' : 'X';
                 }
             }
         }
-
     }
 }

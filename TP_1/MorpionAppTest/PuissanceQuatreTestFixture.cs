@@ -1,6 +1,5 @@
 ﻿using MorpionApp;
 
-
 namespace MorpionAppTest
 {
     public class PuissanceQuatreTestFixture
@@ -16,7 +15,7 @@ namespace MorpionAppTest
         {
             for (int col = 0; col < 4; col++)
             {
-                puissanceQuatre.grille[ligne, col] = joueur;
+                puissanceQuatre.grille.PlacerJeton(ligne, col, joueur);
             }
         }
 
@@ -24,7 +23,7 @@ namespace MorpionAppTest
         {
             for (int ligne = 0; ligne < 4; ligne++)
             {
-                puissanceQuatre.grille[ligne, colonne] = joueur;
+                puissanceQuatre.grille.PlacerJeton(ligne, colonne, joueur);
             }
         }
 
@@ -32,7 +31,7 @@ namespace MorpionAppTest
         {
             for (int i = 0; i < 4; i++)
             {
-                puissanceQuatre.grille[i, i] = joueur;
+                puissanceQuatre.grille.PlacerJeton(i, i, joueur);
             }
         }
     }
