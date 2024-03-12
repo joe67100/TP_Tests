@@ -242,12 +242,12 @@ La raison provient des vérifications (notamment `verifVictoire`) non-conformes
 
 Cependant ils ne permettent pas de mettre en exergue certains problèmes relatifs à l'IHM, comme les exemples suivants :
 
-![IHM bug1](images/ihm_bug1.png)
-![IHM bug2](images/ihm_bug2.png)
-*Parfois le même joueur joue 2 fois d'affilé*
+![IHM bug1](images/ihm_bug1.png)  
+![IHM bug2](images/ihm_bug2.png)  
+*Parfois le même joueur joue 2 fois d'affilé*  
 
-![IHM bug3](images/ihm_bug3.png)
-*Les pions n'apparaissent pas sur la dernière colonne du puissance 4*
+![IHM bug3](images/ihm_bug3.png)  
+*Les pions n'apparaissent pas sur la dernière colonne du puissance 4*  
 
 *   **Correction des défauts et refactorisation**
 
@@ -263,6 +263,11 @@ Cependant ils ne permettent pas de mettre en exergue certains problèmes relatif
 
     -   Exécuter à nouveau les tests unitaires sur le code refactorisé pour s'assurer que les corrections ont été apportées et que de nouveaux bugs n'ont pas été introduits.
     -   Effectuer des tests manuels pour tester le comportement global du jeu et s'assurer qu'il répond aux exigences.
+
+![tests_post_refactoring](images/tests_post_refactoring.png)  
+Grâce à ces tests post-refactoring, nous pouvons nous rendre compte que les dysfonctionnements initiaux ont été corrigés.  
+
+Les défauts liés à l'IHM ont également été corrigés.
 
 *   **Amélioration continue**
 
