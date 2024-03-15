@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditApp", "CreditApp\CreditApp.csproj", "{D1F8CF09-624F-444C-B071-34F0B63E48EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditAppTest", "CreditAppTest\CreditAppTest.csproj", "{832A7A07-9203-4EC8-B621-B7D9EE157276}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1F8CF09-624F-444C-B071-34F0B63E48EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F8CF09-624F-444C-B071-34F0B63E48EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1F8CF09-624F-444C-B071-34F0B63E48EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1F8CF09-624F-444C-B071-34F0B63E48EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832A7A07-9203-4EC8-B621-B7D9EE157276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832A7A07-9203-4EC8-B621-B7D9EE157276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832A7A07-9203-4EC8-B621-B7D9EE157276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832A7A07-9203-4EC8-B621-B7D9EE157276}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23BE0361-7297-49C4-8E15-06F621CF200B}
+	EndGlobalSection
+EndGlobal

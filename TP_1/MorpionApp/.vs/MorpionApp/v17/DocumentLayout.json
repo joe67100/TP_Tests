@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapp\\morpion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|solutionrelative:morpion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapp\\entree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|solutionrelative:entree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0418F92-68EA-4091-BC49-D5F9652BBFA7}|MorpionApp.csproj|c:\\dev\\_tests_2a\\tp_1\\morpionapp\\puissancequatre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -52,11 +52,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Entree.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\Entree.cs",
               "RelativeDocumentMoniker": "Entree.cs",
@@ -77,8 +77,7 @@
               "RelativeToolTip": "Sortie.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T22:11:28.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-12T22:11:28.026Z"
             },
             {
               "$type": "Document",
@@ -90,8 +89,7 @@
               "RelativeToolTip": "PuissanceQuatre.cs",
               "ViewState": "AQIAAE0AAAAAAAAAAAAawEYAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T15:43:37.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-28T15:43:37.582Z"
             },
             {
               "$type": "Document",
@@ -103,31 +101,30 @@
               "RelativeToolTip": "..\\MorpionAppTest\\PuissanceQuatreTestFixture.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T14:46:55.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T14:46:55.657Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAYAAAAhAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAAA0AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-28T15:43:29.931Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Morpion.cs",
               "DocumentMoniker": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\Morpion.cs",
               "RelativeDocumentMoniker": "Morpion.cs",
               "ToolTip": "C:\\DEV\\_TESTS_2A\\TP_1\\MorpionApp\\Morpion.cs",
               "RelativeToolTip": "Morpion.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAawCQAAABKAAAA",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAAAJYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-28T14:59:47.602Z",
               "EditorCaption": ""
@@ -142,8 +139,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\Users\\Joe\\AppData\\Local\\SourceServer\\648448a40ee9b4308b446566fdad5a9e1ef67c0efb9f74b36b495682eb435f6c\\TP_1\\MorpionApp\\PuissanceQuatre.cs",
               "ViewState": "AQIAAC8AAAAAAAAAAAAAAEcAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T22:25:13.278Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-12T22:25:13.278Z"
             },
             {
               "$type": "Document",
@@ -155,8 +151,7 @@
               "RelativeToolTip": "interfaces\\IGrille.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T20:02:12.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-12T20:02:12.037Z"
             },
             {
               "$type": "Document",
@@ -168,8 +163,7 @@
               "RelativeToolTip": "..\\MorpionAppTest\\MorpionTest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T07:27:54.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T07:27:54.037Z"
             },
             {
               "$type": "Document",
@@ -181,8 +175,7 @@
               "RelativeToolTip": "..\\MorpionAppTest\\MorpionTestFixture.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T07:27:39.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T07:27:39.413Z"
             },
             {
               "$type": "Document",
@@ -194,8 +187,7 @@
               "RelativeToolTip": "..\\MorpionAppTest\\PuissanceQuatreTest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T14:49:02.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T14:49:02.304Z"
             },
             {
               "$type": "Document",
