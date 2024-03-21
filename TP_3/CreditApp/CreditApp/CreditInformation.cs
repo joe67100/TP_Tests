@@ -4,11 +4,11 @@ namespace CreditApp
 {
     public class CreditInformation : ICreditInformation
     {
-        public double Loan { get; }
-        public int Duration { get; }
-        public double NominalRate { get; }
+        public Loan Loan { get; }
+        public Duration Duration { get; }
+        public NominalRate NominalRate { get; }
 
-        public CreditInformation(double loan, int duration, double nominalRate)
+        public CreditInformation(Loan loan, Duration duration, NominalRate nominalRate)
         {
             Loan = loan;
             Duration = duration;

@@ -2,8 +2,8 @@
 {
     internal interface ICreditInformation
     {
-        double Loan { get; }
-        int Duration { get; }
-        double NominalRate { get; }
+        Loan Loan { get; }
+        Duration Duration { get; }
+        NominalRate NominalRate { get; }
     }
 }
