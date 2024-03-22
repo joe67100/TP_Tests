@@ -42,5 +42,31 @@ namespace CreditAppTest
             // Arrange/act/assert
             Assert.ThrowsAny<ArgumentException>(() => new CreditInformation(new(loanValue), new(durationValue), new(nominalRateValue)));
         }
+
+        [InlineData(200000, 180, 2, 1287.02)]
+        [InlineData(50000.01, 108, 1.72, 500.05)]
+        [Theory]
+        public void MonthlyPaymentIsCorrect(double loanValue, int durationValue, double nominalRateValue, double expectedMonthlyPayment)
+        {
+            // Arrange
+            CreditInformation creditInformation = new(new(loanValue), new(durationValue), new(nominalRateValue));
+            // Act
+            double monthlyPayment = creditInformation.GetMonthlyPayment();
+            // Assert
+            Assert.Equal(expectedMonthlyPayment, monthlyPayment);
+        }
+
+        [InlineData(100000, 200, 3, 127198)]
+        [InlineData(690000, 280, 1.7, 836357.2)]
+        [Theory]
+        public void TotalDueLoanIsCorrect(double loanValue, int durationValue, double nominalRateValue, double expectedTotalDueLoan)
+        {
+            // Arrange
+            CreditInformation creditInformation = new(new(loanValue), new(durationValue), new(nominalRateValue));
+            // Act
+            double totalDueLoan = creditInformation.GetTotalDueLoan();
+            // Assert
+            Assert.Equal(expectedTotalDueLoan, totalDueLoan);
+        }
     }
 }
