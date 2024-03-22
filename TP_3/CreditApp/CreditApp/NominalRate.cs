@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace CreditApp
 {
-    public class NominalRate : IValueObject
+    public class NominalRate : IValueObject<double>
     {
         public double NominalRateValue { get; private set; }
 
@@ -13,8 +13,7 @@ namespace CreditApp
             NominalRateValue = value;
         }
 
-        public void Validate<T>(T value)
-            where T : INumber<T>
+        public void Validate(double value)
         {
             if (!Validators.IsPositive(value))
             {

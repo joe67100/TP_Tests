@@ -6,8 +6,9 @@ namespace CreditAppTest
     {
         [InlineData(107)]
         [InlineData(301)]
+        [InlineData(-100)]
         [Theory]
-        public void ExceptionThrownIfDurationValueNotBetween108And300Int(int value)
+        public void ExceptionThrownIfDurationValueNotBetween108And300(int value)
         {
             // Arrange/Act
             var exception = Assert.Throws<ArgumentException>(() => new Duration(value));
@@ -17,8 +18,21 @@ namespace CreditAppTest
 
         [InlineData(108)]
         [InlineData(300)]
+        [InlineData(250)]
         [Theory]
-        public void DurationValueInitializedIfDurationValueBetween108And300Int(int value)
+        public void ExceptionNotThrownIfDurationValueBetween108And300(int value)
+        {
+            // Arrange/Act
+            var exception = Record.Exception(() => new Duration(value));
+            // Assert
+            Assert.Null(exception);
+        }
+
+        [InlineData(108)]
+        [InlineData(300)]
+        [InlineData(250)]
+        [Theory]
+        public void DurationValueInitializedIfDurationValueBetween108And300(int value)
         {
             // Arrange/Act
             var duration = new Duration(value);

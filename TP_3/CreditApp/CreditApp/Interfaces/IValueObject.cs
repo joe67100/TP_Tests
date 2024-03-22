@@ -1,9 +1,7 @@
-﻿using System.Numerics;
-
-namespace CreditApp.Interfaces
+﻿namespace CreditApp.Interfaces
 {
-    public interface IValueObject
+    public interface IValueObject<T>
     {
-        void Validate<T>(T value) where T : INumber<T>;
+        void Validate(T value);
     }
 }

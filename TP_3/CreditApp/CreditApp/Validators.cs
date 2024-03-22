@@ -9,13 +9,13 @@ namespace CreditApp
         {
             return value >= min && value <= max;
         }
-        
+
         public static bool IsPositive<T>(T value)
             where T : INumber<T>
         {
             return value > T.Zero;
         }
-        
+
         public static bool IsGreaterOrEqualThan<T>(T value, T min)
             where T : INumber<T>
         {

@@ -4,8 +4,9 @@ namespace CreditAppTest
 {
     public class LoanTests
     {
-        [InlineData(20000)]
+        [InlineData(49999)]
         [InlineData(-10000)]
+        [InlineData(Int32.MinValue)]
         [Theory]
         public void ExceptionThrownIfLoanValueLessThan50000Int(int value)
         {
@@ -16,6 +17,19 @@ namespace CreditAppTest
         }
 
         [InlineData(50000)]
+        [InlineData(120000)]
+        [InlineData(Int32.MaxValue)]
+        [Theory]
+        public void ExceptionNotThrownIfLoanValueGreaterOrEqualThan50000Int(int value)
+        {
+            // Arrange/Act
+            var exception = Record.Exception(() => new Loan(value));
+            // Assert
+            Assert.Null(exception);
+        }
+
+        [InlineData(50000)]
+        [InlineData(120000)]
         [InlineData(Int32.MaxValue)]
         [Theory]
         public void LoanValueInitializedIfLoanValueGreaterOrEqualThan50000Int(int value)
@@ -35,6 +49,18 @@ namespace CreditAppTest
             var exception = Assert.Throws<ArgumentException>(() => new Loan(value));
             // Assert
             Assert.Equal("Value must be greater or equal to 50,000", exception.Message);
+        }
+
+        [InlineData(50000.0)]
+        [InlineData(120000.23)]
+        [InlineData(Double.MaxValue)]
+        [Theory]
+        public void ExceptionNotThrownIfLoanValueGreaterOrEqualThan50000Double(double value)
+        {
+            // Arrange/Act
+            var exception = Record.Exception(() => new Loan(value));
+            // Assert
+            Assert.Null(exception);
         }
 
         [InlineData(50000.0)]

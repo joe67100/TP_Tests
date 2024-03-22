@@ -4,7 +4,7 @@ using System.Numerics;
 
 namespace CreditApp
 {
-    public class Loan : IValueObject
+    public class Loan : IValueObject<double>
     {
         public double LoanValue { get; private set; }
 
@@ -14,10 +14,9 @@ namespace CreditApp
             LoanValue = value;
         }
 
-        public void Validate<T>(T value) 
-            where T : INumber<T>
+        public void Validate(double value)
         {
-            if (!Validators.IsGreaterOrEqualThan(value, (T)Convert.ChangeType(50000, typeof(T))))
+            if (!Validators.IsGreaterOrEqualThan(value, 50000))
             {
                 throw new ArgumentException("Value must be greater or equal to 50,000");
             }
