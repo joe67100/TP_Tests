@@ -17,8 +17,7 @@ namespace CreditApp
             }
             catch
             {
-                Console.WriteLine("Error while trying to parse an argument");
-                throw;
+                throw new FormatException("Invalid argument format.");
             }
         }
     }
