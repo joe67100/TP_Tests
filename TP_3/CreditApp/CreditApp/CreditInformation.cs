@@ -25,5 +25,48 @@ namespace CreditApp
         {
             return Math.Round(GetMonthlyPayment() * Duration.DurationValue, 2, MidpointRounding.AwayFromZero);
         }
+
+        public double[] GetMonthlyLoanPayment()
+        {
+            double[] monthlyLoanPayments = new double[Duration.DurationValue];
+            double monthlyPayment = GetMonthlyPayment();
+            double remainingLoan = Loan.LoanValue;
+
+            for (int i = 0; i < Duration.DurationValue; i++)
+            {
+                double interestPayment = remainingLoan * NominalRatePercent / 12;
+                double loanPayment = monthlyPayment - interestPayment;
+                monthlyLoanPayments[i] = Math.Round(loanPayment, 2, MidpointRounding.AwayFromZero);
+                remainingLoan -= loanPayment;
+            }
+            return monthlyLoanPayments;
+        }
+
+        public double[] GetMonthlyInterestPayment()
+        {
+            double[] monthlyInterestPayments = new double[Duration.DurationValue];
+            double remainingLoan = Loan.LoanValue;
+
+            for (int i = 0; i < Duration.DurationValue; i++)
+            {
+                double interestPayment = remainingLoan * NominalRatePercent / 12;
+                monthlyInterestPayments[i] = Math.Round(interestPayment, 2, MidpointRounding.AwayFromZero);
+                remainingLoan -= (GetMonthlyPayment() - interestPayment);
+            }
+            return monthlyInterestPayments;
+        }
+
+        public double[] GetMonthlyRemainingDueLoan()
+        {
+            double[] remainingDueLoan = new double[Duration.DurationValue];
+            double totalDueLoan = GetTotalDueLoan();
+
+            for (int i = 0; i < Duration.DurationValue; i++)
+            {
+                totalDueLoan -= GetMonthlyPayment();
+                remainingDueLoan[i] = Math.Round(totalDueLoan, 2, MidpointRounding.AwayFromZero);
+            }
+            return remainingDueLoan;
+        }
     }
 }
