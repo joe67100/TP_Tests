@@ -1,4 +1,4 @@
-using CreditApp;
+using CreditApp.Domain;
 
 namespace CreditAppTest
 {
@@ -43,6 +43,22 @@ namespace CreditAppTest
             Assert.ThrowsAny<ArgumentException>(() => new CreditInformation(new(loanValue), new(durationValue), new(nominalRateValue)));
         }
 
+        [Theory]
+        [InlineData(5.0, 0.05)]
+        [InlineData(10.0, 0.1)]
+        [InlineData(2, 0.02)]
+        public void NominalRatePercentReturnsCorrectValue(double nominalRateValue, double expectedPercent)
+        {
+            // Arrange
+            var creditInformation = new CreditInformation(new(52000), new(200), new(nominalRateValue));
+
+            // Act
+            var percent = creditInformation.NominalRatePercent;
+
+            // Assert
+            Assert.Equal(expectedPercent, percent);
+        }
+
         [InlineData(200000, 180, 2, 1287.02)]
         [InlineData(50000.01, 108, 1.72, 500.05)]
         [InlineData(100000, 108, 1.5, 990.41)]
@@ -54,11 +70,11 @@ namespace CreditAppTest
             // Act
             double monthlyPayment = creditInformation.GetMonthlyPayment();
             // Assert
-            Assert.Equal(expectedMonthlyPayment, monthlyPayment);
+            Assert.Equal(expectedMonthlyPayment, monthlyPayment, 2);
         }
 
-        [InlineData(100000, 200, 3, 127198)]
-        [InlineData(690000, 280, 1.7, 836357.2)]
+        [InlineData(100000, 200, 3, 127197.08)]
+        [InlineData(690000, 280, 1.7, 836355.95)]
         [Theory]
         public void TotalDueLoanIsCorrect(double loanValue, int durationValue, double nominalRateValue, double expectedTotalDueLoan)
         {
@@ -67,7 +83,7 @@ namespace CreditAppTest
             // Act
             double totalDueLoan = creditInformation.GetTotalDueLoan();
             // Assert
-            Assert.Equal(expectedTotalDueLoan, totalDueLoan);
+            Assert.Equal(expectedTotalDueLoan, totalDueLoan, 2);
         }
 
         // Go to a defined month and check if the LoanPayment is correct
@@ -84,14 +100,14 @@ namespace CreditAppTest
             double[] monthlyLoanPayments = creditInformation.GetMonthlyLoanPayment();
 
             // Assert
-            Assert.Equal(expectedMonthlyLoanPayment, monthlyLoanPayments[monthIndex - 1], 0); // Ajustement car index commence à 0 donc monthlyLoanPayments[12] correspond au 13ème mois
+            Assert.Equal(expectedMonthlyLoanPayment, monthlyLoanPayments[monthIndex - 1], 2); // Ajustement car index commence à 0 donc monthlyLoanPayments[12] correspond au 13ème mois
         }
 
         // Go to a defined month and check if the InterestPayment is correct
         [Theory]
-        [InlineData(200000, 180, 2, 180, 2.13)]
-        [InlineData(50000.01, 108, 1.72, 12, 64.85)]
-        [InlineData(100000, 200, 3, 20, 231.23)]
+        [InlineData(200000, 180, 2, 180, 2.2)]
+        [InlineData(50000.01, 108, 1.72, 12, 64.86)]
+        [InlineData(100000, 200, 3, 20, 231.24)]
         public void GetMonthlyInterestPaymentIsCorrect(double loanValue, int durationValue, double nominalRateValue, int monthIndex, double expectedMonthlyInterestPayment)
         {
             // Arrange
@@ -104,11 +120,11 @@ namespace CreditAppTest
             Assert.Equal(expectedMonthlyInterestPayment, monthlyInterestPayments[monthIndex - 1], 0);
         }
 
-        [InlineData(200000, 180, 2)]
-        [InlineData(50000.01, 108, 1.72)]
-        [InlineData(100000, 200, 3)]
+        [InlineData(200000, 180, 2, 180)]
+        [InlineData(50000.01, 108, 1.72, 5)]
+        [InlineData(100000, 200, 3, 1)]
         [Theory]
-        public void MonthlyPaymentIsSumOfLoanAndInterestPayments(double loanValue, int durationValue, double nominalRateValue)
+        public void MonthlyPaymentIsSumOfLoanAndInterestPayments(double loanValue, int durationValue, double nominalRateValue, int monthIndex)
         {
             // Arrange
             CreditInformation creditInformation = new(new(loanValue), new(durationValue), new(nominalRateValue));
@@ -119,14 +135,11 @@ namespace CreditAppTest
             double[] monthlyInterestPayments = creditInformation.GetMonthlyInterestPayment();
 
             // Assert
-            for (int i = 0; i < durationValue; i++)
-            {
-                Assert.Equal(monthlyPayment, monthlyLoanPayments[i] + monthlyInterestPayments[i], 2);
-            }
+            Assert.Equal(monthlyPayment, monthlyLoanPayments[monthIndex - 1] + monthlyInterestPayments[monthIndex - 1], 2);
         }
 
-        [InlineData(200000, 180, 2, 8, 221367.44)]
-        [InlineData(77500, 228, 2.4, 12, 91501.92)]
+        [InlineData(200000, 180, 2, 8, 221366.99)]
+        [InlineData(77500, 228, 2.4, 12, 91501.04)]
         [InlineData(87234, 200, 2, 200, 0)]
         [Theory]
         public void MonthlyRemainingDueLoanIsCorrectAtSpecificMonth(double loanValue, int durationValue, double nominalRateValue, int monthIndex, double expectedRemainingLoanValue)

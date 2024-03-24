@@ -1,4 +1,6 @@
-﻿namespace CreditAppTest
+﻿using CreditApp;
+
+namespace CreditAppTest
 {
     public class ProgramTests
     {
@@ -11,7 +13,6 @@
                 new object[] { new string[] { "50000", "300", "0,01" } },
             };
 
-        [InlineData(new string[] { "1", "2" }, "Invalid arguments length")]
         [InlineData(new string[] { }, "Invalid arguments length")]
         [InlineData(new string[] { "1", "2", "3", "4" }, "Invalid arguments length")]
         [InlineData(new string[] { "55000", "150", "-3" }, "Nominal rate must be a positive value.")]

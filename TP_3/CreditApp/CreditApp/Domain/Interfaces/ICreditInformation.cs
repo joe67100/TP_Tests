@@ -1,6 +1,6 @@
-﻿namespace CreditApp.Interfaces
+﻿namespace CreditApp.Domain.Interfaces
 {
-    internal interface ICreditInformation
+    public interface ICreditInformation
     {
         Loan Loan { get; }
         Duration Duration { get; }

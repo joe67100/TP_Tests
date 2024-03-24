@@ -1,6 +1,6 @@
-﻿using CreditApp.Interfaces;
+﻿using CreditApp.Domain.Interfaces;
 
-namespace CreditApp
+namespace CreditApp.Domain
 {
     public class Duration : IValueObject<int>
     {

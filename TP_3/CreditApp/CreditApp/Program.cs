@@ -1,30 +1,35 @@
-﻿using CreditApp;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
+using CreditApp.Domain;
 
-public class Program
+namespace CreditApp
 {
-    public static void Main(string[] args)
+    public class Program
     {
-        ImmutableArray<string> immutableArgs = ImmutableArray.Create(args);
-        try
+        public static void Main(string[] args)
         {
-            if (!ArgumentsUtils.IsArgumentsLengthValid(immutableArgs))
+            ImmutableArray<string> immutableArgs = ImmutableArray.Create(args);
+            try
             {
-                throw new ArgumentException("Invalid arguments length");
-            }
-            
-            double loanValue = ArgumentsUtils.ParseArgument<double>(immutableArgs[0]);
-            int durationValue = ArgumentsUtils.ParseArgument<int>(immutableArgs[1]);
-            double nominalRateValue = ArgumentsUtils.ParseArgument<double>(immutableArgs[2]);
+                if (!ArgumentsUtils.IsArgumentsLengthValid(immutableArgs))
+                {
+                    throw new ArgumentException("Invalid arguments length");
+                }
 
-            Loan loan = new(loanValue);
-            Duration duration = new(durationValue);
-            NominalRate nominalRate = new(nominalRateValue);
-            CreditInformation creditInformation = new(loan, duration, nominalRate);
-        }
-        catch (Exception ex)
-        {
-            ConsoleOutput.Write(ex.Message);
+                double loanValue = ArgumentsUtils.ParseArgument<double>(immutableArgs[0]);
+                int durationValue = ArgumentsUtils.ParseArgument<int>(immutableArgs[1]);
+                double nominalRateValue = ArgumentsUtils.ParseArgument<double>(immutableArgs[2]);
+
+                Loan loan = new(loanValue);
+                Duration duration = new(durationValue);
+                NominalRate nominalRate = new(nominalRateValue);
+                CreditInformation creditInformation = new(loan, duration, nominalRate);
+
+                new CreditReportGeneration(creditInformation).GenerateReport();
+            }
+            catch (Exception ex)
+            {
+                ConsoleOutput.Write(ex.Message);
+            }
         }
     }
 }

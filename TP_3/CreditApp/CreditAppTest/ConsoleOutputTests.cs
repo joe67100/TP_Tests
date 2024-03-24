@@ -5,7 +5,7 @@ namespace CreditAppTest
     public class ConsoleOutputTests
     {
         [Theory]
-        [InlineData("Hello World!")]
+        [InlineData("Hello World")]
         [InlineData("Buongiorno")]
         public void WriteShouldWriteMessageToConsole(string message)
         {

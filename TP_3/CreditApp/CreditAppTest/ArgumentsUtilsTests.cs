@@ -32,8 +32,8 @@ namespace CreditAppTest
             Assert.ThrowsAny<Exception>(() => ArgumentsUtils.ParseArgument<int>(arg));
         }
 
-        [InlineData("123", 123)] // Test parsing string to int
-        [InlineData("123,45", 123.45)] // Test parsing string to double
+        [InlineData("123", 123)]
+        [InlineData("123,45", 123.45)]
         [Theory]
         public void ParseArgumentReturnsCorrectValue(string arg, double expected)
         {

@@ -1,4 +1,4 @@
-﻿using CreditApp;
+﻿using CreditApp.Domain;
 
 namespace CreditAppTest
 {

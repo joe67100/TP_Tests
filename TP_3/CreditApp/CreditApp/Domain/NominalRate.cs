@@ -1,7 +1,6 @@
-﻿using CreditApp.Interfaces;
-using System.Numerics;
+﻿using CreditApp.Domain.Interfaces;
 
-namespace CreditApp
+namespace CreditApp.Domain
 {
     public class NominalRate : IValueObject<double>
     {

@@ -1,4 +1,4 @@
-﻿namespace CreditApp.Interfaces
+﻿namespace CreditApp.Domain.Interfaces
 {
     public interface IValueObject<T>
     {

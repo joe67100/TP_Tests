@@ -1,29 +1,22 @@
-using CreditApp.Interfaces;
+using CreditApp.Domain.Interfaces;
 
-namespace CreditApp
+namespace CreditApp.Domain
 {
-    public class CreditInformation : ICreditInformation
+    public class CreditInformation(Loan loan, Duration duration, NominalRate nominalRate) : ICreditInformation
     {
-        public Loan Loan { get; }
-        public Duration Duration { get; }
-        public NominalRate NominalRate { get; }
-        private double NominalRatePercent => NominalRate.NominalRateValue / 100.0;
-
-        public CreditInformation(Loan loan, Duration duration, NominalRate nominalRate)
-        {
-            Loan = loan;
-            Duration = duration;
-            NominalRate = nominalRate;
-        }
+        public Loan Loan { get; } = loan;
+        public Duration Duration { get; } = duration;
+        public NominalRate NominalRate { get; } = nominalRate;
+        public double NominalRatePercent => NominalRate.NominalRateValue / 100.0;
 
         public double GetMonthlyPayment()
         {
-            return Math.Round(Loan.LoanValue * (NominalRatePercent / 12) / (1 - Math.Pow((1 + NominalRatePercent / 12), -Duration.DurationValue)), 2, MidpointRounding.AwayFromZero);
+            return Loan.LoanValue * (NominalRatePercent / 12) / (1 - Math.Pow(1 + NominalRatePercent / 12, -Duration.DurationValue));
         }
 
         public double GetTotalDueLoan()
         {
-            return Math.Round(GetMonthlyPayment() * Duration.DurationValue, 2, MidpointRounding.AwayFromZero);
+            return GetMonthlyPayment() * Duration.DurationValue;
         }
 
         public double[] GetMonthlyLoanPayment()
@@ -36,7 +29,7 @@ namespace CreditApp
             {
                 double interestPayment = remainingLoan * NominalRatePercent / 12;
                 double loanPayment = monthlyPayment - interestPayment;
-                monthlyLoanPayments[i] = Math.Round(loanPayment, 2, MidpointRounding.AwayFromZero);
+                monthlyLoanPayments[i] = loanPayment;
                 remainingLoan -= loanPayment;
             }
             return monthlyLoanPayments;
@@ -50,8 +43,8 @@ namespace CreditApp
             for (int i = 0; i < Duration.DurationValue; i++)
             {
                 double interestPayment = remainingLoan * NominalRatePercent / 12;
-                monthlyInterestPayments[i] = Math.Round(interestPayment, 2, MidpointRounding.AwayFromZero);
-                remainingLoan -= (GetMonthlyPayment() - interestPayment);
+                monthlyInterestPayments[i] = interestPayment;
+                remainingLoan -= GetMonthlyPayment() - interestPayment;
             }
             return monthlyInterestPayments;
         }
@@ -64,7 +57,7 @@ namespace CreditApp
             for (int i = 0; i < Duration.DurationValue; i++)
             {
                 totalDueLoan -= GetMonthlyPayment();
-                remainingDueLoan[i] = Math.Round(totalDueLoan, 2, MidpointRounding.AwayFromZero);
+                remainingDueLoan[i] = totalDueLoan;
             }
             return remainingDueLoan;
         }
