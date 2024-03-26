@@ -6,6 +6,6 @@
         string GetHeader();
         string GetSubHeader();
         IEnumerable<string> GetCreditData();
-        public void GenerateReport();
+        void GenerateReport();
     }
 }
