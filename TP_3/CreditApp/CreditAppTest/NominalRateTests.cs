@@ -10,7 +10,7 @@ namespace CreditAppTest
         public void ExceptionThrownIfNominalRateValueNotPositiveInt(int value)
         {
             // Arrange/Act
-            var exception = Assert.Throws<ArgumentException>(() => new NominalRate(value));
+            ArgumentException exception = Assert.Throws<ArgumentException>(() => new NominalRate(value));
             // Assert
             Assert.Equal("Nominal rate must be a positive value.", exception.Message);
         }
@@ -21,7 +21,7 @@ namespace CreditAppTest
         public void NominalRateValueInitializedIfNominalRateValuePositiveInt(int value)
         {
             // Arrange/Act
-            var nominalRate = new NominalRate(value);
+            NominalRate nominalRate = new NominalRate(value);
             // Assert
             Assert.Equal(value, nominalRate.NominalRateValue);
         }
@@ -32,7 +32,7 @@ namespace CreditAppTest
         public void ExceptionThrownIfNominalRateValueNotPositiveDouble(double value)
         {
             // Arrange/Act
-            var exception = Assert.Throws<ArgumentException>(() => new NominalRate(value));
+            ArgumentException exception = Assert.Throws<ArgumentException>(() => new NominalRate(value));
             // Assert
             Assert.Equal("Nominal rate must be a positive value.", exception.Message);
         }
@@ -43,7 +43,7 @@ namespace CreditAppTest
         public void NominalRateValueInitializedIfNominalRateValuePositiveDouble(double value)
         {
             // Arrange/Act
-            var nominalRate = new NominalRate(value);
+            NominalRate nominalRate = new NominalRate(value);
             // Assert
             Assert.Equal(value, nominalRate.NominalRateValue);
         }

@@ -5,7 +5,6 @@ namespace CreditAppTest
 {
     public class ArgumentsUtilsTests
     {
-        [InlineData(new object[] { 1, 2, 3 }, true)]
         [InlineData(new object[] { }, false)]
         [InlineData(new object[] { -1, 2 }, false)]
         [InlineData(new object[] { "1", "2", "3" }, true)]

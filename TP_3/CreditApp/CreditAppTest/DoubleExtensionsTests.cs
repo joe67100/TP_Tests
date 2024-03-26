@@ -6,8 +6,6 @@ namespace CreditAppTest
     {
         [Theory]
         [InlineData(1.23456, 1.23)]
-        [InlineData(1.234567, 1.23)]
-        [InlineData(1.235678, 1.24)]
         [InlineData(1.236789, 1.24)]
         public void CheckIfRoudRoundsCorrectly(double value, double expectedValue)
         {

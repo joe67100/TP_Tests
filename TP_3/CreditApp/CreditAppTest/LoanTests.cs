@@ -11,7 +11,7 @@ namespace CreditAppTest
         public void ExceptionThrownIfLoanValueLessThan50000Int(int value)
         {
             // Arrange/Act
-            var exception = Assert.Throws<ArgumentException>(() => new Loan(value));
+            ArgumentException exception = Assert.Throws<ArgumentException>(() => new Loan(value));
             // Assert
             Assert.Equal("Value must be greater or equal to 50,000", exception.Message);
         }
@@ -23,7 +23,7 @@ namespace CreditAppTest
         public void ExceptionNotThrownIfLoanValueGreaterOrEqualThan50000Int(int value)
         {
             // Arrange/Act
-            var exception = Record.Exception(() => new Loan(value));
+            Exception exception = Record.Exception(() => new Loan(value));
             // Assert
             Assert.Null(exception);
         }
@@ -35,7 +35,7 @@ namespace CreditAppTest
         public void LoanValueInitializedIfLoanValueGreaterOrEqualThan50000Int(int value)
         {
             // Arrange/Act
-            var loan = new Loan(value);
+            Loan loan = new Loan(value);
             // Assert
             Assert.Equal(value, loan.LoanValue);
         }
@@ -46,7 +46,7 @@ namespace CreditAppTest
         public void ExceptionThrownIfLoanValueLessThan50000Double(double value)
         {
             // Arrange/Act
-            var exception = Assert.Throws<ArgumentException>(() => new Loan(value));
+            ArgumentException exception = Assert.Throws<ArgumentException>(() => new Loan(value));
             // Assert
             Assert.Equal("Value must be greater or equal to 50,000", exception.Message);
         }
@@ -58,7 +58,7 @@ namespace CreditAppTest
         public void ExceptionNotThrownIfLoanValueGreaterOrEqualThan50000Double(double value)
         {
             // Arrange/Act
-            var exception = Record.Exception(() => new Loan(value));
+            Exception exception = Record.Exception(() => new Loan(value));
             // Assert
             Assert.Null(exception);
         }
@@ -69,7 +69,7 @@ namespace CreditAppTest
         public void LoanValueInitializedIfLoanValueGreaterOrEqualThan50000Double(double value)
         {
             // Arrange/Act
-            var loan = new Loan(value);
+            Loan loan = new Loan(value);
             // Assert
             Assert.Equal(value, loan.LoanValue);
         }

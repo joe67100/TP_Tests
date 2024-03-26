@@ -4,13 +4,14 @@ namespace CreditApp.Domain
 {
     public class CreditReportGeneration : ICreditReportGeneration
     {
-        private readonly ICreditInformation _creditInformation;
-        public readonly string _fileName;
+        public ICreditInformation CreditInformation { get; private set; }
+
+        public string FileName { get; set; }
 
         public CreditReportGeneration(ICreditInformation creditInformation)
         {
-            _creditInformation = creditInformation;
-            _fileName = GetFileName(DateTime.Now);
+            CreditInformation = creditInformation;
+            FileName = GetFileName(DateTime.Now);
         }
 
         public string GetFileName(DateTime date)
@@ -20,7 +21,7 @@ namespace CreditApp.Domain
 
         public string GetHeader()
         {
-            return $"Coût total crédit (€);{_creditInformation.GetTotalDueLoan().Round()};Durée (mois);{_creditInformation.Duration.DurationValue};Taux (%);{_creditInformation.NominalRate.NominalRateValue}";
+            return $"Coût total crédit (€);{CreditInformation.GetTotalDueLoan().Round()};Durée (mois);{CreditInformation.Duration.DurationValue};Taux (%);{CreditInformation.NominalRate.NominalRateValue}";
         }
 
         public string GetSubHeader()
@@ -30,19 +31,19 @@ namespace CreditApp.Domain
 
         public IEnumerable<string> GetCreditData()
         {
-            double[] monthlyLoanPayments = _creditInformation.GetMonthlyLoanPayment();
-            double[] monthlyInterestPayments = _creditInformation.GetMonthlyInterestPayment();
-            double[] remainingDueLoan = _creditInformation.GetMonthlyRemainingDueLoan();
+            double[] monthlyLoanPayments = CreditInformation.GetMonthlyLoanPayment();
+            double[] monthlyInterestPayments = CreditInformation.GetMonthlyInterestPayment();
+            double[] remainingDueLoan = CreditInformation.GetMonthlyRemainingDueLoan();
 
-            for (int i = 0; i < _creditInformation.Duration.DurationValue; i++)
+            for (int i = 0; i < CreditInformation.Duration.DurationValue; i++)
             {
-                yield return $"{i + 1};{monthlyLoanPayments[i].Round()};{monthlyInterestPayments[i].Round()};{_creditInformation.GetMonthlyPayment().Round()};{Math.Abs(remainingDueLoan[i].Round())}";
+                yield return $"{i + 1};{monthlyLoanPayments[i].Round()};{monthlyInterestPayments[i].Round()};{CreditInformation.GetMonthlyPayment().Round()};{Math.Abs(remainingDueLoan[i].Round())}";
             }
         }
 
         public void GenerateReport()
         {
-            CsvCreator.CreateCsvFile(_fileName, writer =>
+            CsvCreator.CreateCsvFile(FileName, writer =>
             {
                 writer.WriteLine(GetHeader());
                 writer.WriteLine();

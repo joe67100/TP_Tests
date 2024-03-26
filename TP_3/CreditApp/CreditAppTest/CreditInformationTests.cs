@@ -28,7 +28,7 @@ namespace CreditAppTest
         public void CreditInformationIsCreated(double loanValue, int durationValue, double nominalRateValue)
         {
             // Arrange/act
-            var exception = Record.Exception(() => new CreditInformation(new(loanValue), new(durationValue), new(nominalRateValue)));
+            Exception exception = Record.Exception(() => new CreditInformation(new(loanValue), new(durationValue), new(nominalRateValue)));
             // Assert
             Assert.Null(exception);
         }
@@ -43,17 +43,17 @@ namespace CreditAppTest
             Assert.ThrowsAny<ArgumentException>(() => new CreditInformation(new(loanValue), new(durationValue), new(nominalRateValue)));
         }
 
-        [Theory]
         [InlineData(5.0, 0.05)]
         [InlineData(10.0, 0.1)]
         [InlineData(2, 0.02)]
+        [Theory]
         public void NominalRatePercentReturnsCorrectValue(double nominalRateValue, double expectedPercent)
         {
             // Arrange
-            var creditInformation = new CreditInformation(new(52000), new(200), new(nominalRateValue));
+            CreditInformation creditInformation = new CreditInformation(new(52000), new(200), new(nominalRateValue));
 
             // Act
-            var percent = creditInformation.NominalRatePercent;
+            double percent = creditInformation.NominalRatePercent;
 
             // Assert
             Assert.Equal(expectedPercent, percent);
@@ -104,10 +104,10 @@ namespace CreditAppTest
         }
 
         // Go to a defined month and check if the InterestPayment is correct
-        [Theory]
         [InlineData(200000, 180, 2, 180, 2.2)]
         [InlineData(50000.01, 108, 1.72, 12, 64.86)]
         [InlineData(100000, 200, 3, 20, 231.24)]
+        [Theory]
         public void GetMonthlyInterestPaymentIsCorrect(double loanValue, int durationValue, double nominalRateValue, int monthIndex, double expectedMonthlyInterestPayment)
         {
             // Arrange

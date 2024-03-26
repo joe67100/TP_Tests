@@ -6,7 +6,7 @@ namespace CreditApp
     {
         public static void CreateCsvFile(string fileName, Action<StreamWriter>writeAction)
         {
-            using var writer = new StreamWriter(fileName, false, new UTF8Encoding(true));
+            using StreamWriter writer = new(fileName, false, new UTF8Encoding(true));
             writeAction(writer);
         }
     }

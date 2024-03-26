@@ -40,7 +40,7 @@ namespace CreditAppTest
         public void ExceptionIsNotThrownIfArgsAreCorrect(string[] args)
         {
             // Act
-            var exception = Record.Exception(() => Program.Main(args));
+            Exception exception = Record.Exception(() => Program.Main(args));
             // Assert
             Assert.Null(exception);
         }

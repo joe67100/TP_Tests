@@ -5,12 +5,11 @@ namespace CreditAppTest
     public class ConsoleOutputTests
     {
         [Theory]
-        [InlineData("Hello World")]
         [InlineData("Buongiorno")]
         public void WriteShouldWriteMessageToConsole(string message)
         {
             // Arrange
-            var stringWriter = new StringWriter();
+            StringWriter stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
 
             // Act

@@ -18,7 +18,7 @@ namespace CreditAppTest
         public void ExceptionThrownIfDurationValueNotBetween108And300(int value)
         {
             // Arrange/Act
-            var exception = Assert.Throws<ArgumentException>(() => new Duration(value));
+            ArgumentException exception = Assert.Throws<ArgumentException>(() => new Duration(value));
             // Assert
             Assert.Equal("Duration has to be between 108 and 300", exception.Message);
         }
@@ -28,7 +28,7 @@ namespace CreditAppTest
         public void ExceptionNotThrownIfDurationValueBetween108And300(int value)
         {
             // Arrange/Act
-            var exception = Record.Exception(() => new Duration(value));
+            Exception exception = Record.Exception(() => new Duration(value));
             // Assert
             Assert.Null(exception);
         }
@@ -38,7 +38,7 @@ namespace CreditAppTest
         public void DurationValueInitializedIfDurationValueBetween108And300(int value)
         {
             // Arrange/Act
-            var duration = new Duration(value);
+            Duration duration = new Duration(value);
             // Assert
             Assert.Equal(value, duration.DurationValue);
         }
