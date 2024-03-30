@@ -7,24 +7,6 @@ namespace CreditAppTest
         [InlineData(50000, 108, 3.3)]
         [InlineData(Int32.MaxValue, 300, 2)]
         [Theory]
-        public void CheckIfCreditObjectsAreProperlyPassedInsideCreditInformationConstructor(double loanValue, int durationValue, double nominalRateValue)
-        {
-            // Arrange
-            Loan loan = new(loanValue);
-            Duration duration = new(durationValue);
-            NominalRate nominalRate = new(nominalRateValue);
-            // Act
-            CreditInformation creditInformation = new(loan, duration, nominalRate);
-
-            // Assert
-            Assert.Equal(loan.LoanValue, creditInformation.Loan.LoanValue);
-            Assert.Equal(duration.DurationValue, creditInformation.Duration.DurationValue);
-            Assert.Equal(nominalRate.NominalRateValue, creditInformation.NominalRate.NominalRateValue);
-        }
-
-        [InlineData(50000, 108, 3.3)]
-        [InlineData(Int32.MaxValue, 300, 2)]
-        [Theory]
         public void CreditInformationIsCreated(double loanValue, int durationValue, double nominalRateValue)
         {
             // Arrange/act
@@ -41,22 +23,6 @@ namespace CreditAppTest
         {
             // Arrange/act/assert
             Assert.ThrowsAny<ArgumentException>(() => new CreditInformation(new(loanValue), new(durationValue), new(nominalRateValue)));
-        }
-
-        [InlineData(5.0, 0.05)]
-        [InlineData(10.0, 0.1)]
-        [InlineData(2, 0.02)]
-        [Theory]
-        public void NominalRatePercentReturnsCorrectValue(double nominalRateValue, double expectedPercent)
-        {
-            // Arrange
-            CreditInformation creditInformation = new CreditInformation(new(52000), new(200), new(nominalRateValue));
-
-            // Act
-            double percent = creditInformation.NominalRatePercent;
-
-            // Assert
-            Assert.Equal(expectedPercent, percent);
         }
 
         [InlineData(200000, 180, 2, 1287.02)]

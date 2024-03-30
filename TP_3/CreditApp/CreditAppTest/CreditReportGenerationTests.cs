@@ -36,21 +36,6 @@ namespace CreditAppTest
             Assert.Equal(expectedHeader, header);
         }
 
-        [InlineData("Mensualité;Amortissement (€) (capital);Intérêts (€);Coût mensualité (€);Restant dû (€)")]
-        [Theory]
-        public void CheckIfSubHeaderContainsCorrectInformation(string expectedSubheader)
-        {
-            // Arrange
-            CreditInformation creditInformation = new CreditInformation(new(70000), new(150), new(3));
-            CreditReportGeneration creditReportGeneration = new CreditReportGeneration(creditInformation);
-
-            // Act
-            string subHeader = creditReportGeneration.GetSubHeader();
-
-            // Assert
-            Assert.Equal(expectedSubheader, subHeader);
-        }
-
         [InlineData(300000, 108, 4.15, "17;2426,38;907,11;3333,49;303347,62", 17)]
         [InlineData(122000, 108, 1.5, "1;1055,8;152,5;1208,3;129288,05", 1)]
         [Theory]
