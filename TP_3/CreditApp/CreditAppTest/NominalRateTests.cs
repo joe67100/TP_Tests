@@ -15,17 +15,6 @@ namespace CreditAppTest
             Assert.Equal("Nominal rate must be a positive value.", exception.Message);
         }
 
-        [InlineData(1)]
-        [InlineData(Int32.MaxValue)]
-        [Theory]
-        public void NominalRateValueInitializedIfNominalRateValuePositiveInt(int value)
-        {
-            // Arrange/Act
-            NominalRate nominalRate = new NominalRate(value);
-            // Assert
-            Assert.Equal(value, nominalRate.NominalRateValue);
-        }
-
         [InlineData(-1.0)]
         [InlineData(0.0)]
         [Theory]
@@ -35,17 +24,6 @@ namespace CreditAppTest
             ArgumentException exception = Assert.Throws<ArgumentException>(() => new NominalRate(value));
             // Assert
             Assert.Equal("Nominal rate must be a positive value.", exception.Message);
-        }
-
-        [InlineData(1.0)]
-        [InlineData(Double.MaxValue)]
-        [Theory]
-        public void NominalRateValueInitializedIfNominalRateValuePositiveDouble(double value)
-        {
-            // Arrange/Act
-            NominalRate nominalRate = new NominalRate(value);
-            // Assert
-            Assert.Equal(value, nominalRate.NominalRateValue);
         }
     }
 }

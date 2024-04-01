@@ -2,7 +2,7 @@
 
 namespace CreditApp.Domain
 {
-    public class CreditReportGeneration : ICreditReportGeneration
+    public class CreditReportGeneration
     {
         public ICreditInformation CreditInformation { get; private set; }
 
@@ -26,18 +26,20 @@ namespace CreditApp.Domain
 
         public string GetSubHeader()
         {
-            return "Mensualité;Amortissement (€) (capital);Intérêts (€);Coût mensualité (€);Restant dû (€)";
+            return "Mensualité;Capital remboursé (€);Capital restant dû (€);Amortissement mensuel (€) (capital);Intérêts mensuels (€);Coût mensualité (€);Total restant dû (€)";
         }
-
+        
         public IEnumerable<string> GetCreditData()
         {
-            double[] monthlyLoanPayments = CreditInformation.GetMonthlyLoanPayment();
+            double[] monthlyCumulativeCapitalPayments = CreditInformation.GetCumulativeMonthlyCapitalPayment();
+            double[] remainingCapitalDue = CreditInformation.GetRemainingCapitalDue();
+            double[] monthlyCapitalPayments = CreditInformation.GetMonthlyCapitalPayment();
             double[] monthlyInterestPayments = CreditInformation.GetMonthlyInterestPayment();
-            double[] remainingDueLoan = CreditInformation.GetMonthlyRemainingDueLoan();
+            double[] remainingDueLoan = CreditInformation.GetRemainingDueLoan();
 
             for (int i = 0; i < CreditInformation.Duration.DurationValue; i++)
             {
-                yield return $"{i + 1};{monthlyLoanPayments[i].Round()};{monthlyInterestPayments[i].Round()};{CreditInformation.GetMonthlyPayment().Round()};{Math.Abs(remainingDueLoan[i].Round())}";
+                yield return $"{i + 1};{monthlyCumulativeCapitalPayments[i].Round()};{remainingCapitalDue[i].Round()};{monthlyCapitalPayments[i].Round()};{monthlyInterestPayments[i].Round()};{CreditInformation.GetMonthlyPayment().Round()};{Math.Abs(remainingDueLoan[i].Round())}";
             }
         }
 

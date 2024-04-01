@@ -57,16 +57,16 @@ namespace CreditAppTest
         [InlineData(50000.01, 108, 1.72, 12, 435.19)]
         [InlineData(100000, 200, 3, 20, 404.74)]
         [Theory]
-        public void GetMonthlyLoanPaymentIsCorrect(double loanValue, int durationValue, double nominalRateValue, int monthIndex, double expectedMonthlyLoanPayment)
+        public void GetMonthlyCapitalPaymentIsCorrect(double loanValue, int durationValue, double nominalRateValue, int monthIndex, double expectedMonthlyLoanPayment)
         {
             // Arrange
             CreditInformation creditInformation = new(new(loanValue), new(durationValue), new(nominalRateValue));
 
             // Act
-            double[] monthlyLoanPayments = creditInformation.GetMonthlyLoanPayment();
+            double[] monthlyCapitalPayments = creditInformation.GetMonthlyCapitalPayment();
 
             // Assert
-            Assert.Equal(expectedMonthlyLoanPayment, monthlyLoanPayments[monthIndex - 1], 2); // Ajustement car index commence à 0 donc monthlyLoanPayments[12] correspond au 13ème mois
+            Assert.Equal(expectedMonthlyLoanPayment, monthlyCapitalPayments[monthIndex - 1], 2); // Ajustement car index commence à 0 donc monthlyLoanPayments[12] correspond au 13ème mois
         }
 
         // Go to a defined month and check if the InterestPayment is correct
@@ -97,24 +97,24 @@ namespace CreditAppTest
 
             // Act
             double monthlyPayment = creditInformation.GetMonthlyPayment();
-            double[] monthlyLoanPayments = creditInformation.GetMonthlyLoanPayment();
+            double[] monthlyCapitalPayments = creditInformation.GetMonthlyCapitalPayment();
             double[] monthlyInterestPayments = creditInformation.GetMonthlyInterestPayment();
 
             // Assert
-            Assert.Equal(monthlyPayment, monthlyLoanPayments[monthIndex - 1] + monthlyInterestPayments[monthIndex - 1], 2);
+            Assert.Equal(monthlyPayment, monthlyCapitalPayments[monthIndex - 1] + monthlyInterestPayments[monthIndex - 1], 2);
         }
 
         [InlineData(200000, 180, 2, 8, 221366.99)]
         [InlineData(77500, 228, 2.4, 12, 91501.04)]
         [InlineData(87234, 200, 2, 200, 0)]
         [Theory]
-        public void MonthlyRemainingDueLoanIsCorrectAtSpecificMonth(double loanValue, int durationValue, double nominalRateValue, int monthIndex, double expectedRemainingLoanValue)
+        public void RemainingDueLoanIsCorrectAtSpecificMonth(double loanValue, int durationValue, double nominalRateValue, int monthIndex, double expectedRemainingLoanValue)
         {
             // Arrange
             CreditInformation creditInformation = new(new(loanValue), new(durationValue), new(nominalRateValue));
 
             // Act
-            double[] remainingDueLoan = creditInformation.GetMonthlyRemainingDueLoan();
+            double[] remainingDueLoan = creditInformation.GetRemainingDueLoan();
 
             // Assert
             Assert.Equal(expectedRemainingLoanValue, remainingDueLoan[monthIndex - 1], 2);

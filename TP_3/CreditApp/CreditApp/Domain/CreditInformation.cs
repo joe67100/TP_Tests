@@ -19,9 +19,9 @@ namespace CreditApp.Domain
             return GetMonthlyPayment() * Duration.DurationValue;
         }
 
-        public double[] GetMonthlyLoanPayment()
+        public double[] GetMonthlyCapitalPayment()
         {
-            double[] monthlyLoanPayments = new double[Duration.DurationValue];
+            double[] monthlyCapitalPayments = new double[Duration.DurationValue];
             double monthlyPayment = GetMonthlyPayment();
             double remainingLoan = Loan.LoanValue;
 
@@ -29,10 +29,25 @@ namespace CreditApp.Domain
             {
                 double interestPayment = remainingLoan * NominalRatePercent / 12;
                 double loanPayment = monthlyPayment - interestPayment;
-                monthlyLoanPayments[i] = loanPayment;
+                monthlyCapitalPayments[i] = loanPayment;
                 remainingLoan -= loanPayment;
             }
-            return monthlyLoanPayments;
+            return monthlyCapitalPayments;
+        }
+
+        public double[] GetCumulativeMonthlyCapitalPayment()
+        {
+            double[] monthlyCapitalPayments = GetMonthlyCapitalPayment();
+            double[] cumulativemonthlyCapitalPayments = new double[monthlyCapitalPayments.Length];
+            double cumulativePayment = 0;
+
+            for (int i = 0; i < monthlyCapitalPayments.Length; i++)
+            {
+                cumulativePayment += monthlyCapitalPayments[i];
+                cumulativemonthlyCapitalPayments[i] = cumulativePayment;
+            }
+
+            return cumulativemonthlyCapitalPayments;
         }
 
         public double[] GetMonthlyInterestPayment()
@@ -49,7 +64,7 @@ namespace CreditApp.Domain
             return monthlyInterestPayments;
         }
 
-        public double[] GetMonthlyRemainingDueLoan()
+        public double[] GetRemainingDueLoan()
         {
             double[] remainingDueLoan = new double[Duration.DurationValue];
             double totalDueLoan = GetTotalDueLoan();
@@ -60,6 +75,20 @@ namespace CreditApp.Domain
                 remainingDueLoan[i] = totalDueLoan;
             }
             return remainingDueLoan;
+        }
+        public double[] GetRemainingCapitalDue()
+        {
+            double[] monthlyCapitalPayments = GetMonthlyCapitalPayment();
+            double[] remainingLoanAfterMonthlyCapitalPayment = new double[monthlyCapitalPayments.Length];
+            double remainingLoan = Loan.LoanValue;
+
+            for (int i = 0; i < monthlyCapitalPayments.Length; i++)
+            {
+                remainingLoan -= monthlyCapitalPayments[i];
+                remainingLoanAfterMonthlyCapitalPayment[i] = remainingLoan;
+            }
+
+            return remainingLoanAfterMonthlyCapitalPayment;
         }
     }
 }

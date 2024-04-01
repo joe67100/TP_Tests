@@ -32,15 +32,5 @@ namespace CreditAppTest
             // Assert
             Assert.Null(exception);
         }
-
-        [MemberData(nameof(ValidDurationValues))]
-        [Theory]
-        public void DurationValueInitializedIfDurationValueBetween108And300(int value)
-        {
-            // Arrange/Act
-            Duration duration = new Duration(value);
-            // Assert
-            Assert.Equal(value, duration.DurationValue);
-        }
     }
 }

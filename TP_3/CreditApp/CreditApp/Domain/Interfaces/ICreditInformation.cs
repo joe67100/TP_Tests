@@ -7,8 +7,10 @@
         NominalRate NominalRate { get; }
         double GetMonthlyPayment();
         double GetTotalDueLoan();
-        double[] GetMonthlyLoanPayment();
+        double[] GetMonthlyCapitalPayment();
         double[] GetMonthlyInterestPayment();
-        double[] GetMonthlyRemainingDueLoan();
+        double[] GetRemainingDueLoan();
+        double[] GetRemainingCapitalDue();
+        double[] GetCumulativeMonthlyCapitalPayment();
     }
 }

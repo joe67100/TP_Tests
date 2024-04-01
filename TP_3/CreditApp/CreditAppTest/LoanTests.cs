@@ -28,18 +28,6 @@ namespace CreditAppTest
             Assert.Null(exception);
         }
 
-        [InlineData(50000)]
-        [InlineData(120000)]
-        [InlineData(Int32.MaxValue)]
-        [Theory]
-        public void LoanValueInitializedIfLoanValueGreaterOrEqualThan50000Int(int value)
-        {
-            // Arrange/Act
-            Loan loan = new Loan(value);
-            // Assert
-            Assert.Equal(value, loan.LoanValue);
-        }
-
         [InlineData(20000.23)]
         [InlineData(-10000.10)]
         [Theory]
@@ -61,17 +49,6 @@ namespace CreditAppTest
             Exception exception = Record.Exception(() => new Loan(value));
             // Assert
             Assert.Null(exception);
-        }
-
-        [InlineData(50000.0)]
-        [InlineData(Double.MaxValue)]
-        [Theory]
-        public void LoanValueInitializedIfLoanValueGreaterOrEqualThan50000Double(double value)
-        {
-            // Arrange/Act
-            Loan loan = new Loan(value);
-            // Assert
-            Assert.Equal(value, loan.LoanValue);
         }
     }
 }

@@ -36,8 +36,8 @@ namespace CreditAppTest
             Assert.Equal(expectedHeader, header);
         }
 
-        [InlineData(300000, 108, 4.15, "17;2426,38;907,11;3333,49;303347,62", 17)]
-        [InlineData(122000, 108, 1.5, "1;1055,8;152,5;1208,3;129288,05", 1)]
+        [InlineData(300000, 108, 4.15, "17;40130,62;259869,38;2426,38;907,11;3333,49;303347,62", 17)]
+        [InlineData(122000, 108, 1.5, "1;1055,8;120944,2;1055,8;152,5;1208,3;129288,05", 1)]
         [Theory]
         public void CheckIfGetCreditDataReturnsCorrectInformation(double loanValue, int durationValue, double nominalRateValue, string expectedData, int monthToCheck)
         {
@@ -52,7 +52,7 @@ namespace CreditAppTest
             Assert.Equal(expectedData, data);
         }
 
-        [InlineData(300000, 108, 4.15, "17;2426,38;907,11;3333,49;303347,62", 17)]
+        [InlineData(300000, 108, 4.15, "17;40130,62;259869,38;2426,38;907,11;3333,49;303347,62", 17)]
         [Theory]
         public void CheckIfReportIsGeneratedWithCorrectValues(double loanValue, int durationValue, double nominalRateValue, string expectedData, int monthToCheck)
         {
